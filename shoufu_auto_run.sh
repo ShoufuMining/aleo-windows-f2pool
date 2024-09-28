@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# 定义颜色变量
 purple="\033[35m"
 reset="\033[0m"  # 用于重置颜色
 
-# 输出欢迎信息
 echo -e "${purple}---------------------------------"
 echo -e "|  ----首----     ----富----   |"
 echo -e "| |         |   |          |  |"
@@ -23,6 +21,7 @@ echo "========================================================================"
 
 # 显示主菜单
 while true; do
+    clear  # 清屏
     echo "========================================================================" 
     echo "1) 安装 ALEO 一键挖矿脚本" 
     echo "2) 待更新..." 
@@ -31,12 +30,11 @@ while true; do
 
     case $OPTION in 
         1)  
-            # 安装 ALEO 一键挖矿脚本
             cd ~
-            rm -f shoufu_f2pool_aleominer.sh  # 使用 -f 防止错误
-            wget -q https://raw.githubusercontent.com/ShoufuMining/aleo-windows-f2pool/main/shoufu_f2pool_aleominer.sh || { echo "下载失败"; exit 1; }
+            rm -rf shoufu_f2pool_aleominer.sh
+            wget https://raw.githubusercontent.com/ShoufuMining/aleo-windows-f2pool/main/shoufu_f2pool_aleominer.sh
             chmod u+x shoufu_f2pool_aleominer.sh
-            ./shoufu_f2pool_aleominer.sh || { echo "脚本执行失败"; exit 1; }
+            ./shoufu_f2pool_aleominer.sh
             ;; 
         2) 
             echo "待更新..." 
@@ -50,5 +48,8 @@ while true; do
             sleep 1 
             ;; 
     esac 
-done
 
+    # 提示用户按任意键返回主界面
+    echo "按任意键返回主界面..."
+    read -n 1  # 等待用户按下任意键
+done
