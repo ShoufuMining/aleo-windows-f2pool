@@ -17,4 +17,5 @@ timeout /t 5
 goto loop
 
 鱼池ALEO挖矿，Ubuntu掉线重启挖矿脚本
-一键运行脚本：
+一键运行脚本：wget -qO- https://gh-proxy.com/https://raw.githubusercontent.com/ShoufuMining/aleo-windows-f2pool/main/shoufu_f2pool_aleominer.sh | bash
+
