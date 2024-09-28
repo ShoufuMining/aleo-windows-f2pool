@@ -5,7 +5,7 @@ f2pool ALEO mining, restart the mining script in windows
 创建aleo.bat，复制下面内容：然后保存就可以了！
 
 @echo off
-set /p POOL_URL="Enter primary pool URL (e.g., stratum+ssl://pool.hugevip.top:5020): "
+set /p POOL_URL="Enter primary pool URL (e.g., stratum+ssl://aleo-asia.f2pool.com:4420): "
 set /p WORKER_NAME="Enter worker name (e.g., fujia.4090): "
 
 :loop
