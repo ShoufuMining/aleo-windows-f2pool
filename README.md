@@ -2,7 +2,7 @@
 f2pool ALEO mining, restart the mining script in windows
 
 鱼池ALEO挖矿，windows版掉线重启挖矿脚本,
-创建aleo.bat，复制下面内容：然后保存就可以了！
+创建一键挖矿脚本：aleo.bat，复制下面内容：然后保存就可以了！
 
 @echo off
 set /p POOL_URL="Enter primary pool URL (e.g., stratum+ssl://aleo-asia.f2pool.com:4420): "
