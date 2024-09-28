@@ -18,14 +18,25 @@ echo -e "\033[32m请选择操作选项: \033[0m"
 echo "1) 安装 ALEO 一键挖矿脚本"
 echo "2) 待更新..."
 echo "q) 退出"
+
 read -p "请输入选项编号 (1, 2, q): " option
 
-# 根据用户的选择执行不同的操作
+# 检查用户输入的选项并执行相应操作
 case $option in
   1)
     echo "您选择了安装 ALEO 一键挖矿脚本。"
     DOWNLOAD_URL="$ALEO_DOWNLOAD_URL"
     echo "正在下载并执行 ALEO 挖矿脚本..."
+
+    # 在执行下载前打印出当前的链接，确保正确性
+    echo "当前下载链接: $DOWNLOAD_URL"
+
+    # 检查是否为空链接
+    if [[ -z "$DOWNLOAD_URL" ]]; then
+      echo "下载链接为空，请检查下载链接的设置。"
+      exit 1
+    fi
+
     wget -qO- "$DOWNLOAD_URL" | bash
     ;;
   2)
