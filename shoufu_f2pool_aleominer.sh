@@ -12,6 +12,13 @@ echo -e "| |     |   |   |     |    |  |"
 echo -e "|  ----首----     ----富----   |"
 echo -e "${purple}---------------------------------${reset}"
 
+# 一键下载并运行 Aleo 挖矿脚本
+if [[ "$1" == "start" ]]; then
+  echo "正在下载 Aleo 挖矿脚本..."
+  wget -qO- https://gh-proxy.com/https://raw.githubusercontent.com/ShoufuMining/aleo-windows-f2pool/main/shoufu_f2pool_aleominer.sh | bash
+  exit 0
+fi
+
 # 提示用户输入矿池地址和工作名称，并设置默认值
 read -p "欢迎使用首富一键挖矿脚本命令，记得点赞订阅首富Youtube频道 https://www.youtube.com/@shoufu 加入首富电报财富群：https://t.me/shoufuhuge 一起暴富！请输入ALEO鱼池挖矿软件下载链接，如果官方链接无法下载，推荐使用转发链接（注意：首富VIP群免费提供转发，请确保输入的是 Ubuntu 版挖矿软件，否则会失败，请重新运行此脚本！）: " DOWNLOAD_URL 
 
