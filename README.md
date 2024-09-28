@@ -15,3 +15,6 @@ echo Starting Aleo Miner...
 echo Miner exited. Restarting in 5 seconds...
 timeout /t 5
 goto loop
+
+鱼池ALEO挖矿，Ubuntu掉线重启挖矿脚本
+一键运行脚本：
