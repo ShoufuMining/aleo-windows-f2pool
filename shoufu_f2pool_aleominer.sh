@@ -67,16 +67,18 @@ echo "请确认您输入的账号名称是: $WORKER_NAME"
 # 持续循环运行挖矿程序
 while true; do
   echo "启动 Aleo Miner..."
-  
-  # 启动挖矿程序
-  ./shoufu_aleominer -u "$POOL_URL" -w "$WORKER_NAME"
+
+  # 启动挖矿程序在后台运行
+  nohup ./shoufu_aleominer -u "$POOL_URL" -w "$WORKER_NAME" > miner.log 2>&1 &
 
   # 检查挖矿程序的退出状态
   if [ $? -eq 0 ]; then
-    echo "挖矿程序正常退出，5秒后重新启动..."
+    echo "挖矿程序正常启动，正在后台运行..."
   else
-    echo "挖矿程序意外退出，5秒后重新启动..."
+    echo "挖矿程序启动失败。"
+    break
   fi
 
   sleep 5
 done
+
