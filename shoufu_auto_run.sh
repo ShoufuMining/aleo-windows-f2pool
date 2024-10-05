@@ -33,7 +33,7 @@ while true; do
         1)  
             cd ~
             rm -rf shoufu_f2pool_aleominer.sh
-            wget https://raw.githubusercontent.com/ShoufuMining/aleo-windows-f2pool/main/shoufu_f2pool_aleominer.sh
+            curl -L -O https://raw.githubusercontent.com/ShouFuMining/aleo-windows-f2pool/main/shoufu_f2pool_aleominer.sh
             chmod u+x shoufu_f2pool_aleominer.sh
             ./shoufu_f2pool_aleominer.sh
             ;; 
