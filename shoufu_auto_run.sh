@@ -40,10 +40,18 @@ while true; do
     case $OPTION in 
         1)  
             cd ~
+            echo "正在下载 ALEO 一键挖矿脚本..."
             rm -rf shoufu_f2pool_aleominer.sh
             curl -L -O https://raw.githubusercontent.com/ShouFuMining/aleo-windows-f2pool/main/shoufu_f2pool_aleominer.sh
-            chmod u+x shoufu_f2pool_aleominer.sh
-            ./shoufu_f2pool_aleominer.sh
+            
+            # 检查下载是否成功
+            if [[ -f "shoufu_f2pool_aleominer.sh" ]]; then
+                chmod u+x shoufu_f2pool_aleominer.sh
+                echo "下载完成，正在运行脚本..."
+                ./shoufu_f2pool_aleominer.sh
+            else
+                echo "下载失败，请检查网络连接或URL是否正确。"
+            fi
             ;; 
         2) 
             echo -e "${purple}待更新...${reset}" 
@@ -61,4 +69,4 @@ while true; do
     # 提示用户按任意键返回主界面
     echo -e "${green}按任意键返回主界面...${reset}"
     read -n 1  # 等待用户按下任意键
-done 
+done
